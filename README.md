@@ -52,45 +52,53 @@ inter.DrawSingleKey(player, inter.KeyCodes.E, 'Open shop', inter.Color.BLUE, int
 
 ```js
 // ~key~ to put key image on text position
-inter.DrawSingleKey(inter.KeyCode.E, 'Press ~key~ to open shop', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 30000,
+inter.DrawSingleKey(inter.KeyCodes.E, 'Press ~key~ to open shop', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 30000,
 () => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/press_multi.png)
 
 ```js
 // put text before image
-inter.DrawSingleKey(inter.KeyCode.E, 'open shop ~key~', inter.Color.RED, inter.Position.TOP_LEFT, false, 30000,
+inter.DrawSingleKey(inter.KeyCodes.E, 'open shop ~key~', inter.Color.RED, inter.Position.TOP_LEFT, false, 30000,
 () => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/text_before.png)
 
 ```js
 // support rtl
-inter.DrawSingleKey(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 30000,
+inter.DrawSingleKey(inter.KeyCodes.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 30000,
 () => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/rtl.png)
 
 # multiple keys
 ```js
-const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
   inter.Hide(id)
+  // key checker
+  if(inter.isEquals(key, inter.KeyCodes.ArrowUp)){
+    // arrow up has clicked.
+  }
 },
-() => { // timeout or destroyed.})
+() => { /*timeout or destroyed.*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/double_key.png)
 ```js
 // also we can parse our keys positions.
-const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
   inter.Hide(id)
+  // key checker
+  if(inter.isEquals(key, inter.KeyCodes.ArrowUp)){
+    // arrow up has clicked.
+  }
 },
-() => { // timeout or destroyed.})
+() => { /*timeout or destroyed.*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/arrow_dobule.png)
 ```js
@@ -100,8 +108,12 @@ const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
   inter.Hide(id)
+  // key checker
+  if(inter.isEquals(key, inter.KeyCodes.ArrowUp)){
+    // arrow up has clicked.
+  }
 },
-() => { // timeout or destroyed.})
+() => { /*timeout or destroyed.*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/groub_position.png)
 * [q2apro](https://github.com/q2apro/keyboard-keys-speedflips) thanks for icons
