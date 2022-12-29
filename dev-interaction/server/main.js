@@ -248,6 +248,6 @@ export function DrawText(player, key, text, color=null, position=null, rtl=false
     alt.emitClient(player, 'interaction:drawText', key, text, color, position, rtl)
 }
 
-export function Hide(player){
-    alt.emitClient(player, 'interaction:hide')
+export function Hide(player, timeout = 0){
+    alt.emitClient(player, 'interaction:hide', timeout)
 }
