@@ -1,5 +1,5 @@
 # dev-interaction
-interaction resource with keyboard keys icon for Alt:V
+interaction resource with keyboard keys icons for Alt:V
 
 # colors
 black<br>
