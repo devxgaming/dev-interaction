@@ -23,6 +23,9 @@ black<br>
 ```js
 import * as inter from 'dev-interaction'
 inter.DrawText(inter.KeyCode.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT)
+
+// server side
+inter.DrawText(player, inter.KeyCode.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT)
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/blue.png)
 
@@ -45,8 +48,10 @@ inter.DrawText(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/rtl.png)
 
 ```js
-// hide
+// hide client side
 inter.Hide()
+// hide server side
+inter.Hide(player)
 ```
 
 * [q2apro](https://github.com/q2apro/keyboard-keys-speedflips) thanks for icons
