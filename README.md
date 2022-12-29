@@ -15,9 +15,9 @@ black<br>
 <br>pink<br>
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/pink.png)
 
-* [Keyboard Keys](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L5)
-* [Positions](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L116)
-* [Colors](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L128)
+* [Keyboard Keys](https://github.com/omar-othmann/dev-interaction/blob/6fc9764568027619cbe225f6c5d161406c86b1ee/dev-interaction/client/main.js#L5)
+* [Positions](https://github.com/omar-othmann/dev-interaction/blob/6fc9764568027619cbe225f6c5d161406c86b1ee/dev-interaction/client/main.js#L400)
+* [Colors](https://github.com/omar-othmann/dev-interaction/blob/6fc9764568027619cbe225f6c5d161406c86b1ee/dev-interaction/client/main.js#L412)
 # function parameters
 * DrawSingleKey client side
 (key, text, color, position, rtl, timeout, onClick, onDestroyed)
