@@ -50,11 +50,13 @@ class DrawText {
     }
 
 
-    hide() {
-        $('.interaction').hide(1000)
-        setTimeout(() => {
-            this.clear()
-        }, 1000)
+    hide(timeout = 0) {
+        setInterval(() => {
+            $('.interaction').hide(1000)
+            setTimeout(() => {
+                this.clear()
+            }, 1000)
+        }, timeout)
     }
 }
 
@@ -63,7 +65,7 @@ alt.on('show', (key, text, color = null, position = 'top-left', rtl=false) => {
     new DrawText(key, text, color, position, rtl).show()
 })
 
-alt.on('hide', () => {
-    new DrawText().hide()
+alt.on('hide', (timeout = 0) => {
+    new DrawText().hide(timeout)
 })
 
