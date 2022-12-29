@@ -52,3 +52,4 @@ inter.Hide()
 * [q2apro](https://github.com/q2apro/keyboard-keys-speedflips) thanks for icons
 
 * don't forget to install packages by npm for Alt:V client & server side
+* note: you can show key with text without background color. use inter.Color.NONE
