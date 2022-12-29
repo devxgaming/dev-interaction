@@ -131,7 +131,8 @@ export const Color = {
     GREEN: 'green',
     BLUE: 'blue',
     PINK: 'pink',
-    YELLOW: 'yellow'
+    YELLOW: 'yellow',
+    NONE: 'none'
 }
 
 export function DrawText(key, text, color=null, position=null, rtl=false){
