@@ -216,33 +216,6 @@ const keyCodes = {
     quote: 222
 };
 
-class Interaction{
-    constructor(){
-        this.key = null
-        this.text = null
-        this.color = null
-        this.position = null
-        this.rtl = false
-        this.isServer = false
-        this.__trigger = false
-        this.__on_click = null
-    }
-
-    show(){
-
-    }
-
-    destroy(){
-
-    }
-
-    onComplite(fun){
-
-    }
-}
-
-
-
 
 
 export const Position = {
