@@ -236,7 +236,8 @@ export const Color = {
     GREEN: 'green',
     BLUE: 'blue',
     PINK: 'pink',
-    YELLOW: 'yellow'
+    YELLOW: 'yellow',
+    NONE: 'none'
 }
 
 
