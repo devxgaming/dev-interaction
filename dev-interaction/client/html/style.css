@@ -1,0 +1,160 @@
+@import url(fonts/PoiretOne-Regular.ttf);
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+.interaction {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    animation: popup 0.7s;
+}
+
+.interaction.black{
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.green{
+    background: rgba(0, 117, 35, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.blue{
+    background: rgba(0, 43, 134, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.yellow{
+    background: rgba(177, 174, 10, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.red{
+    background: rgba(177, 10, 10, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.pink{
+    background: rgba(209, 19, 193, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.interaction.top-left{
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 10px;
+}
+
+.interaction.top-center{
+    top: 0;
+    left: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: translate(-50%, 0);
+}
+
+.interaction.top-right{
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 20px;
+}
+
+.interaction.center-left{
+    left: 0;
+    top: 50%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translate(0, -50%);
+}
+
+.interaction.center{
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.interaction.center-right{
+    right: 0;
+    top: 50%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+
+.interaction.bottom-left{
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 20px;
+}
+
+.interaction.bottom-center{
+    bottom: 0;
+    left: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translate(-50%, 0);
+}
+
+.interaction.bottom-right{
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+}
+
+
+.key-image img{
+    width: 35px;
+    height: 35px;
+    animation: splash .8s linear infinite;
+}
+
+.text{
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+@keyframes splash{
+    100%{
+        scale: 1.2
+    }
+}
+
+
+@keyframes popup {
+    0%{
+      scale: 1
+    }
+    50%{
+      scale: 1.4
+    }
+    60%{
+      scale: 1.1
+    }
+    70%{
+      scale: 1.2
+    }
+    80%{
+      sccale: 1
+    }
+    90%{
+      scale: 1.1
+    }
+    100%{
+      scale: 1
+    }
+  }
