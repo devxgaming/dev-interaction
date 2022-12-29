@@ -116,7 +116,7 @@ const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown
 () => { /*timeout or destroyed.*/})
 
 // serve side is also same like client side only first parm should be player
-const id = inter.DrawMultipleKey(plazer, [inter.KeyCodes.E, inter.KeyCodes.F], 'Press ~key~ from server side ~key~ this also', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 3000,
+const id = inter.DrawMultipleKey(player, [inter.KeyCodes.E, inter.KeyCodes.F], 'Press ~key~ from server side ~key~ this also', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 3000,
 (key) => {
   console.log(inter.isEquals(key, inter.KeyCodes.E))
   inter.Hide(id)
