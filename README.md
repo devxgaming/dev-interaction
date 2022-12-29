@@ -52,6 +52,11 @@ inter.DrawText(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.
 inter.Hide()
 // hide server side
 inter.Hide(player)
+
+// or hide it after timeout if there no press
+
+inter.DrawText(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true)
+inter.Hide(30000) // 30 sec.
 ```
 
 * [q2apro](https://github.com/q2apro/keyboard-keys-speedflips) thanks for icons
