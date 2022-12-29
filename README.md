@@ -83,7 +83,7 @@ const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/double_key.png)
 ```js
-// also we can parse or keys positions.
+// also we can parse our keys positions.
 const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
