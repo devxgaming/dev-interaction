@@ -139,8 +139,8 @@ export function DrawText(key, text, color=null, position=null, rtl=false){
     webView.emit('show', key, text, color, position, rtl)
 }
 
-export function Hide(){
-    webView.emit('hide')
+export function Hide(timeout = 0){
+    webView.emit('hide', timeout)
 }
 
 
@@ -148,6 +148,7 @@ alt.onServer('interaction:drawText', (key, text, color=null, position=null, rtl=
     DrawText(key, text, color, position, rtl)
 })
 
-alt.onServer('interaction:hide', () => {
-    Hide()
+alt.onServer('interaction:hide', (timeout = 0) => {
+    Hide(timeout)
 })
+
