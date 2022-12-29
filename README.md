@@ -18,47 +18,92 @@ black<br>
 * [Keyboard Keys](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L5)
 * [Positions](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L116)
 * [Colors](https://github.com/omar-othmann/dev-interaction/blob/797453eef4811cd778ba7b9a352f2430014fd0fb/dev-interaction/client/main.js#L128)
+# function parameters
+* DrawSingleKey client side
+(key, text, color, position, rtl, timeout, onClick, onDestroyed)
+* DrawSingleKey server side
+(player, key, text, color, position, rtl, timeout, onClick, onDestroyed)
 
+* DrawMultipleKey client side
+(keys, text, color, position, rtl, timeout, onClick, onDestroyed)
+* DrawMultipleKey server side
+(player, keys, text, color, position, rtl, timeout, onClick, onDestroyed)
 # example
 ```js
 import * as inter from 'dev-interaction'
-inter.DrawText(inter.KeyCode.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT)
+inter.DrawSingleKey(inter.KeyCodes.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT, false, 30000,
+() => {
+  console.log('Target key clicked')
+},
+() => {
+  console.log('Timeout or view has replaced with other.')
+})
 
-// server side
-inter.DrawText(player, inter.KeyCode.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT)
+// server side is same like client side but only the first parm should be player example
+inter.DrawSingleKey(player, inter.KeyCodes.E, 'Open shop', inter.Color.BLUE, inter.Position.TOP_LEFT, false, 30000,
+() => {
+  console.log('Target key clicked')
+},
+() => {
+  console.log('Timeout or view has replaced with other.')
+})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/blue.png)
 
 ```js
 // ~key~ to put key image on text position
-inter.DrawText(inter.KeyCode.E, 'Press ~key~ to open shop', inter.Color.BLACK, inter.Position.TOP_LEFT)
+inter.DrawSingleKey(inter.KeyCode.E, 'Press ~key~ to open shop', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 30000,
+() => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/press_multi.png)
 
 ```js
 // put text before image
-inter.DrawText(inter.KeyCode.E, 'Open shop ~key~', inter.Color.RED, inter.Position.TOP_LEFT)
+inter.DrawSingleKey(inter.KeyCode.E, 'open shop ~key~', inter.Color.RED, inter.Position.TOP_LEFT, false, 30000,
+() => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/text_before.png)
 
 ```js
 // support rtl
-inter.DrawText(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true)
+inter.DrawSingleKey(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 30000,
+() => { /*clicked*/},() => {/*destroyed or timeout*/})
 ```
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/rtl.png)
 
+# multiple keys
 ```js
-// hide client side
-inter.Hide()
-// hide server side
-inter.Hide(player)
-
-// or hide it with timeout if there no press
-
-inter.DrawText(inter.KeyCode.E, 'أضغط ~key~ لفتح المتاجر', inter.Color.BLACK, inter.Position.TOP_LEFT, true)
-inter.Hide(30000) // 30 sec.
+const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+(key) => {
+  console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
+  // hide it?
+  inter.Hide(id)
+},
+() => { // timeout or destroyed.})
 ```
-
+![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/double_key.png)
+```js
+// also we can parse or keys positions.
+const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+(key) => {
+  console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
+  // hide it?
+  inter.Hide(id)
+},
+() => { // timeout or destroyed.})
+```
+![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/arrow_dobule.png)
+```js
+// or groub to text position.
+const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys ~keys~ to do something.', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+(key) => {
+  console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
+  // hide it?
+  inter.Hide(id)
+},
+() => { // timeout or destroyed.})
+```
+![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/groub_position.png)
 * [q2apro](https://github.com/q2apro/keyboard-keys-speedflips) thanks for icons
 
 * don't forget to install packages by npm for Alt:V client & server side
