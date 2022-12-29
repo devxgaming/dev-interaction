@@ -73,7 +73,7 @@ inter.DrawSingleKey(inter.KeyCodes.E, 'أضغط ~key~ لفتح المتاجر', 
 
 # multiple keys
 ```js
-const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCodes.ArrowDown], 'Press some of this keys', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
@@ -88,7 +88,7 @@ const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDow
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/double_key.png)
 ```js
 // also we can parse our keys positions.
-const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCodes.ArrowDown], 'Press ~key~ to move up or ~key~ to move down', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
@@ -103,7 +103,7 @@ const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCode.ArrowDow
 ![alt text](https://github.com/omar-othmann/dev-interaction/blob/main/images/arrow_dobule.png)
 ```js
 // or groub to text position.
-const id = inter.DrawMultipleKey([inter.KeyCode.ArrowUp, inter.KeyCode.ArrowDown], 'Press some of this keys ~keys~ to do something.', inter.Color.BLACK, inter.Position.TOP_LEFT, true, 3000,
+const id = inter.DrawMultipleKey([inter.KeyCodes.ArrowUp, inter.KeyCodes.ArrowDown], 'Press some of this keys ~keys~ to do something.', inter.Color.BLACK, inter.Position.TOP_LEFT, false, 3000,
 (key) => {
   console.log(`key ${key.icon} code: ${key.code} pressed.`) // some of target keys has been pressed.
   // hide it?
