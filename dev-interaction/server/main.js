@@ -439,7 +439,6 @@ class InteractionManager {
         if (find) {
             if (find instanceof SingleKey) {
                 if (find.__on_clicked__) find.__on_clicked__()
-                find.hide() // hide automatic
             } else {
                 if (find.__on_clicked__) find.__on_clicked__(key)
             }
