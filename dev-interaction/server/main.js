@@ -1,5 +1,4 @@
 import * as alt from 'alt-server'
-import { time } from 'alt-shared'
 
 export const KeyCodes = {
     _0: {
